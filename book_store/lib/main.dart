@@ -1,3 +1,4 @@
+import 'package:bookstore/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +61,11 @@ class _LoginPageState extends State<LoginPage> {
                 RaisedButton(
                   child: Text('Login'),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ));
                   },
                 ),
                 FlatButton(
