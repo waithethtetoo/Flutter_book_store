@@ -38,25 +38,27 @@ class BooksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     // TODO: implement build
     return Scaffold(
       body: GridView.count(
         crossAxisCount: 2,
         padding: EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
-        children: _buildCardCollection(bookLst.length),
+        children: _buildCardCollection(bookLst.length, theme),
       ),
       resizeToAvoidBottomInset: false,
     );
   }
 
-  List<Card> _buildCardCollection(int count) {
+  List<Card> _buildCardCollection(int count, ThemeData theme) {
     List<Card> cards = List.generate(
         count,
         (index) => Card(
+              elevation: 0.0,
               clipBehavior: Clip.antiAlias,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   AspectRatio(
                       aspectRatio: 18.0 / 11.0,
@@ -67,13 +69,21 @@ class BooksList extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           bookLst[index].title,
+                          style: theme.textTheme.button,
+                          softWrap: false,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
                         ),
                         SizedBox(height: 4.0),
-                        Text(bookLst[index].author),
+                        Text(
+                          bookLst[index].author,
+                          style: theme.textTheme.caption,
+                        ),
                       ],
                     ),
                   )
