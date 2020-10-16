@@ -125,7 +125,9 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                 labelText: 'UserName',
                 labelStyle: TextStyle(
-                    color: nameFocusNode.hasFocus? Theme.of(context).accentColor : unfocusedColor),
+                    color: nameFocusNode.hasFocus
+                        ? Theme.of(context).accentColor
+                        : unfocusedColor),
               ),
               focusNode: nameFocusNode,
             ),
@@ -135,7 +137,9 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 labelStyle: TextStyle(
-                    color: passwordFocusNode.hasFocus? Theme.of(context).accentColor: unfocusedColor),
+                    color: passwordFocusNode.hasFocus
+                        ? Theme.of(context).accentColor
+                        : unfocusedColor),
               ),
               focusNode: passwordFocusNode,
               obscureText: true,
