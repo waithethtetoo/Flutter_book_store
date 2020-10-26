@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Book Store',
       home: LoginPage(),
       theme: bookTheme,
@@ -57,23 +58,23 @@ ThemeData buildTheme() {
 TextTheme buildTextTheme(TextTheme base) {
   return base
       .copyWith(
-          headline5: base.headline5.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
-          headline6: base.headline6.copyWith(fontSize: 18.0),
-          caption: base.caption.copyWith(
-            fontWeight: FontWeight.w400,
-            fontSize: 14.0,
-          ),
-          bodyText1: base.bodyText1.copyWith(
-            fontWeight: FontWeight.w500,
-            fontSize: 16.0,
-          ))
+      headline5: base.headline5.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
+      headline6: base.headline6.copyWith(fontSize: 18.0),
+      caption: base.caption.copyWith(
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+      ),
+      bodyText1: base.bodyText1.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 16.0,
+      ))
       .apply(
-        fontFamily: 'Rubik',
-        displayColor: green900,
-        bodyColor: green900,
-      );
+    fontFamily: 'Rubik',
+    displayColor: green900,
+    bodyColor: green900,
+  );
 }
 
 class LoginPage extends StatefulWidget {
@@ -115,7 +116,10 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Text(
                   'Book Store',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .headline5,
                 )
               ],
             ),
@@ -126,7 +130,9 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'UserName',
                 labelStyle: TextStyle(
                     color: nameFocusNode.hasFocus
-                        ? Theme.of(context).accentColor
+                        ? Theme
+                        .of(context)
+                        .accentColor
                         : unfocusedColor),
               ),
               focusNode: nameFocusNode,
@@ -138,7 +144,9 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Password',
                 labelStyle: TextStyle(
                     color: passwordFocusNode.hasFocus
-                        ? Theme.of(context).accentColor
+                        ? Theme
+                        .of(context)
+                        .accentColor
                         : unfocusedColor),
               ),
               focusNode: passwordFocusNode,
