@@ -6,12 +6,13 @@ class Book {
   final String title;
   final String author;
   final String cover;
-
-  Book({this.title, this.author, this.cover});
+  final String price;
+  final String category;
+  Book({this.title, this.author, this.cover, this.price, this.category});
 
   factory Book.fromJson(Map<String, dynamic> json) {
     return Book(
-        title: json['title'], author: json['author'], cover: json['cover']);
+        title: json['title'], author: json['author'], cover: json['cover'], price: json['price'], category: json['name']);
   }
 }
 
